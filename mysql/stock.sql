@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： db
--- 產生時間： 2025 年 06 月 24 日 12:45
+-- 產生時間： 2025 年 06 月 24 日 12:52
 -- 伺服器版本： 8.0.42
 -- PHP 版本： 7.4.15
 
@@ -30,14 +30,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `taiwan_stock_price` (
   `date` date NOT NULL,
   `stock_id` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Trading_Volume` int NOT NULL,
+  `Trading_money` bigint NOT NULL,
   `open` float NOT NULL,
   `max` float NOT NULL,
   `min` float NOT NULL,
   `close` float NOT NULL,
   `spread` float NOT NULL,
-  `Trading_turnover` int NOT NULL,
-  `Trading_Volume` int NOT NULL,
-  `Trading_money` int NOT NULL
+  `Trading_turnover` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
