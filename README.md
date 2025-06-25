@@ -53,6 +53,8 @@
     docker build -f Dockerfile -t linsamtw/tibame_crawler:0.0.2 .
     docker build -f with.env.Dockerfile -t linsamtw/tibame_crawler:0.0.3 .
     docker build -f with.env.Dockerfile -t linsamtw/tibame_crawler:0.0.4 .
+    docker build -f with.env.Dockerfile -t linsamtw/tibame_crawler:0.0.5 .
+    docker build -f with.env.Dockerfile -t linsamtw/tibame_crawler:0.0.6 .
 
 #### push docker image
 
@@ -60,6 +62,8 @@
     docker push linsamtw/tibame_crawler:0.0.2
     docker push linsamtw/tibame_crawler:0.0.3
     docker push linsamtw/tibame_crawler:0.0.4
+    docker push linsamtw/tibame_crawler:0.0.5
+    docker push linsamtw/tibame_crawler:0.0.6
 
 #### 建立 network
 
@@ -77,16 +81,22 @@
 
     docker compose -f docker-compose-worker-network.yml up -d
     DOCKER_IMAGE_VERSION=0.0.3 docker compose -f docker-compose-worker-network-version.yml up -d
+    DOCKER_IMAGE_VERSION=0.0.5 docker compose -f docker-compose-worker-network-version.yml up -d
+    DOCKER_IMAGE_VERSION=0.0.6 docker compose -f docker-compose-worker-network-version.yml up -d
 
 #### 關閉 worker
 
     docker compose -f docker-compose-worker-network.yml down
     DOCKER_IMAGE_VERSION=0.0.3 docker compose -f docker-compose-worker-network-version.yml down
+    DOCKER_IMAGE_VERSION=0.0.5 docker compose -f docker-compose-worker-network-version.yml down
+    DOCKER_IMAGE_VERSION=0.0.6 docker compose -f docker-compose-worker-network-version.yml down
 
 #### producer 發送任務
 
     docker compose -f docker-compose-producer-network.yml up -d
     DOCKER_IMAGE_VERSION=0.0.3 docker compose -f docker-compose-producer-network-version.yml up -d
+    DOCKER_IMAGE_VERSION=0.0.5 docker compose -f docker-compose-producer-network-version.yml up -d
+    DOCKER_IMAGE_VERSION=0.0.6 docker compose -f docker-compose-producer-duplicate-network-version.yml up -d
 
 #### 查看 docker container 狀況
 
