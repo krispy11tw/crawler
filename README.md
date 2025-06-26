@@ -77,6 +77,14 @@
 
     docker compose -f rabbitmq-network.yml down
 
+#### 啟動 mysql
+
+    docker compose -f mysql.yml up -d
+
+#### 關閉 mysql
+
+    docker compose -f mysql.yml down
+
 #### 啟動 worker
 
     docker compose -f docker-compose-worker-network.yml up -d
