@@ -129,3 +129,7 @@
 #### 下載 taiwan_stock_price.csv
 
     wget https://github.com/FinMind/FinMindBook/releases/download/data/taiwan_stock_price.csv
+
+#### 上傳 taiwan_stock_price.csv
+
+    pipenv run python crawler/upload_taiwan_stock_price_to_mysql.py
