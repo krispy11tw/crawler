@@ -122,4 +122,6 @@
 
     docker logs container_name
 
+#### 下載 taiwan_stock_price.csv
 
+    wget https://github.com/FinMind/FinMindBook/releases/download/data/taiwan_stock_price.csv
