@@ -6,6 +6,10 @@
 
     pip install pipenv==2022.4.8
 
+#### set pipenv
+
+    pipenv --python ~/.pyenv/versions/3.8.10/bin/python
+
 #### 安裝 repo 套件
 
     pipenv sync
