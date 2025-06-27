@@ -3,12 +3,6 @@ import socket       # 用來取得本機主機名稱
 import os           # 處理檔案與環境變數
 from configparser import ConfigParser  # 讀取 .ini 設定檔的工具
 
-# 取得目前 Python 腳本所在的目錄
-HOME_PATH = "/".join(os.path.abspath(__file__).split("/")[:-1])
-
-# 取得當前主機名稱（例如：你的電腦名或 Docker container 名）
-HOST_NAME = socket.gethostname()
-
 # 建立 ConfigParser 實例，讀取 ini 設定檔
 local_config = ConfigParser()
 local_config.read("local.ini")  # 讀取 local.ini 檔案
@@ -18,9 +12,6 @@ local_config.read("local.ini")  # 讀取 local.ini 檔案
 if os.environ.get("ENV", ""):
     # 若有設 ENV 環境變數，使用對應 section
     section = local_config[os.environ.get("ENV", "")]
-elif HOST_NAME in local_config:
-    # 若有主機名稱對應的 section，就用該 section
-    section = local_config[HOST_NAME]
 else:
     # 都沒有的話，使用 DEFAULT 區段
     section = local_config["DEFAULT"]
